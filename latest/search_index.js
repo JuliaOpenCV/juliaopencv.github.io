@@ -93,7 +93,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Installation",
     "title": "Clone and build",
     "category": "section",
-    "text": "You are almost there! Clone the packages:Pkg.clone(\"https://github.com/JuliaOpenCV/CVCore\")\nPkg.clone(\"https://github.com/JuliaOpenCV/CVCalib3d\")\nPkg.clone(\"https://github.com/JuliaOpenCV/CVHighGUI\")\nPkg.clone(\"https://github.com/JuliaOpenCV/CVVideoIO\")\nPkg.clone(\"https://github.com/JuliaOpenCV/CVImgProc\")\nPkg.clone(\"https://github.com/JuliaOpenCV/CVImgCodecs\")\nPkg.clone(\"https://github.com/JuliaOpenCV/LibOpenCV\")\nPkg.clone(\"https://github.com/JuliaOpenCV/OpenCV\")and then:Pkg.build(\"LibOpenCV\")which searches installed opencv shared libraries. If you don't have opencv installed, Pkg.build(\"LibOpenCV\") will try to build and install them into the LibOpenCV package directory, but not recommended unless if you have perfect requirements to build opencv."
+    "text": "You are almost there! Clone the packages:Pkg.clone(\"https://github.com/JuliaOpenCV/CVCore.jl\")\nPkg.clone(\"https://github.com/JuliaOpenCV/CVCalib3d.jl\")\nPkg.clone(\"https://github.com/JuliaOpenCV/CVHighGUI.jl\")\nPkg.clone(\"https://github.com/JuliaOpenCV/CVVideoIO.jl\")\nPkg.clone(\"https://github.com/JuliaOpenCV/CVImgProc.jl\")\nPkg.clone(\"https://github.com/JuliaOpenCV/CVImgCodecs.jl\")\nPkg.clone(\"https://github.com/JuliaOpenCV/LibOpenCV.jl\")\nPkg.clone(\"https://github.com/JuliaOpenCV/OpenCV.jl\")and then:Pkg.build(\"LibOpenCV\")which searches installed opencv shared libraries. If you don't have opencv installed, Pkg.build(\"LibOpenCV\") will try to build and install them into the LibOpenCV package directory, but not recommended unless if you have perfect requirements to build opencv."
 },
 
 {
@@ -469,7 +469,7 @@ var documenterSearchIndex = {"docs": [
     "page": "LibOpenCV",
     "title": "LibOpenCV.find_library_e",
     "category": "Function",
-    "text": "find_library_e(mod)\nfind_library_e(mod, libdirs)\nfind_library_e(mod, libdirs, ext)\n\n\nIt tries to search the specified library by name. Not exported, but meant to be used by other opencv packages.\n\nParameters\n\nmod : Module name\nlibdirs : library seach directries (default is dir of libopencv_highgui)\next : library extention name (e.g. .so)\n\nRetures\n\nlibpath : library path if found, othrewise return C_NULL\n\nExamples\n\nFrom the CVHighGUI.jl package,\n\nlibopencv_highgui = LibOpenCV.find_library_e(\"libopencv_highgui\")\ntry\n    Libdl.dlopen(libopencv_highgui, Libdl.RTLD_GLOBAL)\ncatch e\n    warn(\"You might need to set DYLD_LIBRARY_PATH to load dependencies proeprty.\")\n    rethrow(e)\nend\n\n\n\n"
+    "text": "find_library_e(mod, libdirs)\nfind_library_e(mod)\nfind_library_e(mod, libdirs, ext)\n\n\nIt tries to search the specified library by name. Not exported, but meant to be used by other opencv packages.\n\nParameters\n\nmod : Module name\nlibdirs : library seach directries (default is dir of libopencv_highgui)\next : library extention name (e.g. .so)\n\nRetures\n\nlibpath : library path if found, othrewise return C_NULL\n\nExamples\n\nFrom the CVHighGUI.jl package,\n\nlibopencv_highgui = LibOpenCV.find_library_e(\"libopencv_highgui\")\ntry\n    Libdl.dlopen(libopencv_highgui, Libdl.RTLD_GLOBAL)\ncatch e\n    warn(\"You might need to set DYLD_LIBRARY_PATH to load dependencies proeprty.\")\n    rethrow(e)\nend\n\n\n\n"
 },
 
 {
